@@ -1,0 +1,135 @@
+:experimental:
+:commandkey: &#8984;
+:toc: macro
+:source-highlighter: highlight.js
+
+= How to Create Your Own Test Site for Passkeys using `java-webauthn-server`
+
+Below is a step-by-step guide on setting up a test site to experiment with passkeys. This will involve cloning a repository, running a Gradle wrapper, and configuring ngrok.com.
+
+
+**Prerequisite**:
+
+- https://adoptium.net/[Java 17] - If needed, I recommend using https://sdkman.io/[SDKMAN!] to manage and install multiple versions of Java.
+
+toc::[]
+
+== Installing Java 17
+
+Test site for passkeys requires Java 17. If you don't have Java 17 installed, I recommend using https://sdkman.io/[SDKMAN!] to  install multiple versions of Java.
+
+NOTE: Java 20 is not supported for this guide.
+
+[source,shell]
+----
+java -version
+----
+
+
+== Clone the Git Repository
+
+
+Open a terminal or command prompt.
+
+Navigate to the directory where you want to clone the repository.
+
+Run the following command:
+
+[source,shell]
+----
+git clone https://github.com/marcofanti/java-webauthn-server.git passkeys-playground
+----
+
+
+Once the cloning is done, navigate to the cloned directory:
+
+[source,shell]
+----
+cd passkeys-playground
+----
+
+=== Run the Gradle Wrapper
+
+To run the Gradle wrapper, execute the following command for UNIX-like systems:
+
+[source, shell]
+----
+./gradlew :webauthn-server-demo:run
+----
+or for Windows:
+
+[source, shell]
+----
+gradlew.bat :webauthn-server-demo:run
+----
+
+=== Press ctrl-c to stop the server
+
+== Testing with ngrok
+
+=== Sign up for ngrok.com
+
+2.1. Visit [https://ngrok.com/](https://ngrok.com/)
+
+2.2. Click on "Sign Up" or "Get Started for Free".
+
+2.3. Follow the on-screen instructions to create an account.
+
+----
+
+**3. Cloning the Git Repository**
+
+3.1. Open a terminal or command prompt.
+
+3.2. Navigate to the directory where you want to clone the repository.
+
+3.3. Run the following command:
+```
+git clone https://github.com/Yubico/java-webauthn-server.git
+```
+
+3.4. Once the cloning is done, navigate to the cloned directory:
+```
+cd java-webauthn-server
+```
+
+----
+
+**4. Running gradlew**
+
+4.1. In the root directory of the cloned repository (java-webauthn-server), you'll find a file named `gradlew` (or `gradlew.bat` for Windows).
+
+4.2. To run the Gradle wrapper, execute the following command for UNIX-like systems:
+
+[source]
+----
+./gradlew tasks
+----
+or for Windows:
+
+[source]
+----
+gradlew.bat tasks
+----
+
+4.3. This will list all available tasks. You can replace `tasks` with the specific task you want to run based on the project's documentation.
+
+----
+
+**5. Testing with ngrok**
+
+After setting up your test site, you might want to expose it to the internet for testing purposes. Ngrok can help with that.
+
+5.1. Download and setup ngrok based on instructions in your ngrok account.
+
+5.2. Once ngrok is set up, in the terminal, navigate to where ngrok is installed and execute:
+```
+ngrok http 8080
+```
+Replace `8080` with the port your test site runs on if it's different.
+
+5.3. ngrok will provide you with a public URL. Use this URL to access your test site from any location.
+
+----
+
+With these steps completed, you should have a working test site to try out passkeys. Remember to consult the official documentation of each tool for detailed configuration options and further reading.
