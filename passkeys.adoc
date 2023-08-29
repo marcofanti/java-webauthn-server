@@ -107,6 +107,9 @@ Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and create a new endpoi
 ngrok http https://localhost:8443 --domain=xxxxxx-xxxxxxx-xxxxxxx.ngrok-free.app
 ----
 
+=== Run the Gradle Wrapper
+
+To run the Gradle wrapper, execute the following command for UNIX-like systems, specifying the ngrok endpoint URL and the ngrok domain you created in the previous step:
 
 [source, shell]
 ----
