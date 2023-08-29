@@ -94,7 +94,7 @@ Open a terminal and authenticate your ngrok agent. You only have to do this once
 
 [source, shell]
 ----
-ngrok config add-authtoken 2Kf36DBrMoEBuaHYyhXJPK4FtRv_defdBYAU71ZyTTi5dgPj
+ngrok config add-authtoken a364fYAU71ZyTTFtRv2Ki5DBrMoEBu_defdBdgPj
 ----
 
 === Configure ngrok.com endpoint
@@ -104,7 +104,7 @@ Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and create a new endpoi
 
 [source, shell]
 ----
-ngrok http https://localhost:8443 --domain=xxxxxx-xxxxxxx-xxxxxxx.ngrok-free.app
+ngrok http https://localhost:8443 --domain=your-own-domain.ngrok-free.app
 ----
 
 === Run the Gradle Wrapper
@@ -114,10 +114,10 @@ To run the Gradle wrapper, execute the following command for UNIX-like systems, 
 [source, shell]
 ----
 
-./gradlew --no-daemon :webauthn-server-demo:run -D YUBICO_WEBAUTHN_ALLOWED_ORIGINS=https://xxxxxx-xxxxxxx-xxxxxxx.ngrok-free.app -D YUBICO_WEBAUTHN_RP_ID=xxxxxx-xxxxxxx-xxxxxxx.ngrok-free.app
+./gradlew --no-daemon :webauthn-server-demo:run -D YUBICO_WEBAUTHN_ALLOWED_ORIGINS=https://ship-boat-building.ngrok-free.app.ngrok-free.app -D YUBICO_WEBAUTHN_RP_ID=your-own-domain.ngrok-free.app.ngrok-free.app
 ----
 
-=== Open a browser and navigate to https://xxxxxx-xxxxxxx-xxxxxxx.ngrok-free.app:8443
+=== Open a browser and navigate to https://your-own-domain.ngrok-free.app:8443
 
 === Test creating a new account with passkey
 
