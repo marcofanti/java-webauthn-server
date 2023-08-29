@@ -86,7 +86,7 @@ Press the "Authenticate with passkey" button and verify that you can login with 
 
 === Sign up for ngrok.com
 
-Visit [https://dashboard.ngrok.com/signup](https://dashboard.ngrok.com/signup) and sign up for a free account.
+Visit [https://dashboard.ngrok.com/signup](https://dashboard.ngrok.com/signup) and sign up for a free account, if necessary.
 
 Copy your authtoken from the ngrok dashboard [https://dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken).
 
@@ -97,24 +97,22 @@ Open a terminal and authenticate your ngrok agent. You only have to do this once
 ngrok config add-authtoken a364fYAU71ZyTTFtRv2Ki5DBrMoEBu_defdBdgPj
 ----
 
-=== Configure a ngrok.com domain and endpoint
+=== Configure the ngrok.com domain and create an endpoint
 
 
-Go to [https://dashboard.ngrok.com/cloud-edge/domains] and create a new domain, if you don't have one. Copy the URL of the domain.
-Copy the domain and use the domain in the following command:
+Go to [https://dashboard.ngrok.com/cloud-edge/domains] and create a new domain, if you don't have one. Copy the domain and use the domain in the following command:
 
 [source, shell]
 ----
 ngrok http https://localhost:8443 --domain=your-own-domain.ngrok-free.app
 ----
 
-Set the YUBICO_WEBAUTHN_ALLOWED_ORIGINS environment variable to the ngrok endpoint URL.
+Set the YUBICO_WEBAUTHN_ALLOWED_ORIGINS environment variable to the ngrok domain name.
 
 [source, shell]
 ----
 export YUBICO_WEBAUTHN_RP_ID=your-own-domain.ngrok-free.app
 ----
-
 
 Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and copy the URL of the endpoint. Set the YUBICO_WEBAUTHN_ALLOWED_ORIGINS environment variable to the ngrok endpoint URL.
 
@@ -124,7 +122,7 @@ export YUBICO_WEBAUTHN_ALLOWED_ORIGINS=https://your-own-domain.ngrok-free.app
 ----
 
 
-=== Run the Gradle Wrapper
+=== Start the Gradle Wrapper again
 
 To run the Gradle wrapper, execute the following command for UNIX-like systems:
 
@@ -146,7 +144,6 @@ Press the "Authenticate with passkey" button and verify that you can login with 
 === Press ctrl-c to stop the server
 
 === Press ctrl-c to stop ngrok endpoint
-
 
 
 With these steps completed, you should have a working test site to try out passkeys. Remember to consult the official documentation of each tool for detailed configuration options and further reading.
