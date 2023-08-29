@@ -108,17 +108,29 @@ Copy the domain and use the domain in the following command:
 ngrok http https://localhost:8443 --domain=your-own-domain.ngrok-free.app
 ----
 
-Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and copy the URL of the endpoint.
+Set the YUBICO_WEBAUTHN_ALLOWED_ORIGINS environment variable to the ngrok endpoint URL.
+
+[source, shell]
+----
+export YUBICO_WEBAUTHN_RP_ID=your-own-domain.ngrok-free.app
+----
+
+
+Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and copy the URL of the endpoint. Set the YUBICO_WEBAUTHN_ALLOWED_ORIGINS environment variable to the ngrok endpoint URL.
+
+[source, shell]
+----
+export YUBICO_WEBAUTHN_ALLOWED_ORIGINS=https://your-own-domain.ngrok-free.app
+----
 
 
 === Run the Gradle Wrapper
 
-To run the Gradle wrapper, execute the following command for UNIX-like systems, specifying the ngrok endpoint URL and ngrok domain from the previous steps:
+To run the Gradle wrapper, execute the following command for UNIX-like systems:
 
 [source, shell]
 ----
-
-./gradlew --no-daemon :webauthn-server-demo:run -D YUBICO_WEBAUTHN_ALLOWED_ORIGINS=https://ship-boat-building.ngrok-free.app.ngrok-free.app -D YUBICO_WEBAUTHN_RP_ID=your-own-domain.ngrok-free.app.ngrok-free.app
+./gradlew --no-daemon :webauthn-server-demo:run
 ----
 
 === Open a browser and navigate to https://your-own-domain.ngrok-free.app:8443
