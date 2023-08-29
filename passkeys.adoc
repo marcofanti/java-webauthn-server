@@ -97,19 +97,23 @@ Open a terminal and authenticate your ngrok agent. You only have to do this once
 ngrok config add-authtoken a364fYAU71ZyTTFtRv2Ki5DBrMoEBu_defdBdgPj
 ----
 
-=== Configure ngrok.com endpoint
+=== Configure a ngrok.com domain and endpoint
 
 
-Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and create a new endpoint. Copy the URL of the endpoint.
+Go to [https://dashboard.ngrok.com/cloud-edge/domains] and create a new domain, if you don't have one. Copy the URL of the domain.
+Copy the domain and use the domain in the following command:
 
 [source, shell]
 ----
 ngrok http https://localhost:8443 --domain=your-own-domain.ngrok-free.app
 ----
 
+Go to [https://dashboard.ngrok.com/cloud-edge/endpoints] and copy the URL of the endpoint.
+
+
 === Run the Gradle Wrapper
 
-To run the Gradle wrapper, execute the following command for UNIX-like systems, specifying the ngrok endpoint URL and the ngrok domain you created in the previous step:
+To run the Gradle wrapper, execute the following command for UNIX-like systems, specifying the ngrok endpoint URL and ngrok domain from the previous steps:
 
 [source, shell]
 ----
